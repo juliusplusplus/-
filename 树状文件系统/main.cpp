@@ -36,11 +36,7 @@ void menu()
 
 
 }
-void endPicture()
-{
-system("CLS");
-cout<<"\t\t\t谢谢使用"<< endl;
-}
+
 void help() 
 {
 
@@ -131,14 +127,10 @@ int login(char username[30], char password[30])
     char user[30];
     char pass[30];
     FILE *cfptr;//文件指针
+
     if ((cfptr = fopen("users.ini", "r")) == NULL) 
 	{
-       
-        fclose(cfptr);
-
-		//test
-		cout << "fail to open it! " << endl;
-        return 0;
+        return -1;
     } 
 	else 
 	{
@@ -224,7 +216,6 @@ int fsOperate(char name[30], char pass[30])
 			else if (choice == "exit") 
 			{
                 system("CLS");
-				endPicture();
                  Sleep(500);
                 cout << "用户: " << name << "正在注销...."<<endl;
 				Sleep(500);
@@ -286,7 +277,7 @@ void run()
                         } 
                         else
 						{
-                            cout << "         --注册失败，请重试(>_<)" << endl;
+                            cout << "         --警告，异常错误！(>_<)" << endl;
                              Sleep(200);
                         }
                     }
@@ -298,17 +289,21 @@ void run()
                         cin >> name;
                         cout << "请输入密码:";
                         cin >> pass;
-                        if (login(name, pass) == 1) 
+						if (login(name, pass) == -1)
+						{
+							cout << "          --磁盘打开失败! " << endl;
+							Sleep(1000);
+						}
+                        else if (login(name, pass) == 1) 
 						{
                             cout << "       --登录成功--" << endl;
 							Sleep(1000);
                             fsOperate(name, pass);
-
                         } 
 						else
 						{
                             cout << "          --登录失败，请检查用户名和密码.." << endl;
-                             Sleep(2);
+                             Sleep(1000);
 
                         }
 					}
@@ -323,20 +318,16 @@ void run()
            
             case 4: {
                         system("CLS");
-						endPicture();
                         Sleep(1000);
                         cout << "        --正在退出文件系统.." << endl;
-						
                         exit(0);
                     }
                     break;
                     /*其他选项*/
             default:
-                    
                     break;
         }
     }
-
 }
 int main()
 {
