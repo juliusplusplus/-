@@ -135,6 +135,9 @@ int login(char username[30], char password[30])
 	{
        
         fclose(cfptr);
+
+		//test
+		cout << "fail to open it! " << endl;
         return 0;
     } 
 	else 
@@ -222,9 +225,9 @@ int fsOperate(char name[30], char pass[30])
 			{
                 system("CLS");
 				endPicture();
-                 Sleep(1000);
+                 Sleep(500);
                 cout << "用户: " << name << "正在注销...."<<endl;
-				Sleep(1000);
+				Sleep(500);
                 
                 return 0;
             } 
@@ -239,33 +242,12 @@ void run()
 {
     int choice = 0;
     char name[30], pass[30], pass1[30];
-	   cout << "\t\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\t" << endl;
-		cout << "\t\t^*******************************************^\t" << endl;
-        cout << "\t\t^*               .--.  .--.                *^\t" <<endl;
-        cout << "\t\t^*             ._'   |/   :.-,             *^\t" <<endl;
-        cout << "\t\t^*            |  `'.-;-.;`  .'             *^\t" <<endl;
-        cout << "\t\t^*            _:._/.'.'.'\.`-.              *^\t" <<endl;
-        cout << "\t\t^*           /    \.'.'.'/    /             *^\t" <<endl;
-        cout << "\t\t^*           '-._.;`'-'-';---'  ,  />      *^\t" <<endl;
-        cout << "\t\t^*               /   /|   \'-.  \\/(         *^\t" <<endl;
-        cout << "\t\t^*               `--' `-.-'   `\|_.-'       *^\t" <<endl;
-        cout << "\t\t^*                                `\        *^\t" <<endl;
-		cout<<  "\t\t^*                欢迎进入文件系统         *^"<<endl;  
-		cout << "\t\t^*******************************************^\t" << endl;
-		cout << "\t\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\t" << endl;
-		cout<<endl;
-
-
- Sleep(1500);
-
-    
     while (true) 
 	{
-		
         system("CLS");
 		time_t t = time(0);
 		char tmp[64];
-		strftime(tmp,sizeof(tmp),"\t      %Y/%m/%d %X %a 2014年第%j天%z     ",localtime(&t));
+		strftime(tmp,sizeof(tmp),"\t                    %Y/%m/%d %X %a ",localtime(&t));
 		puts(tmp);
 		cout << "\t\t*********************************************\t" << endl;
 		cout << "\t\t*********************************************\t" << endl; 
@@ -319,7 +301,7 @@ void run()
                         if (login(name, pass) == 1) 
 						{
                             cout << "       --登录成功--" << endl;
-							Sleep(2000);
+							Sleep(1000);
                             fsOperate(name, pass);
 
                         } 
