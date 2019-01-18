@@ -44,7 +44,7 @@ void help()
 		cout << "\t\t=========================================================\t" << endl;                        
 		cout << "\t\t==                     【帮助】                        ==\t" << endl;
 		cout << "\t\t==      输入“help”,显示所有命令的帮助文档；          ==\t" << endl;
-		cout << "\t\t==      输入某个命令“+？”时显示该条命令的使用说明    ==\t" << endl;
+		cout << "\t\t==      输入某个命令+“?”时显示该条命令的使用说明      ==\t" << endl;
 		cout << "\t\t==      输入1表示返回                                  ==\t" << endl;
 	    cout << "\t\t=========================================================\t" << endl;
 		cout << "\t\t=========================================================\t" << endl;   
@@ -56,47 +56,47 @@ void help()
                 menu();
             }
 			else if (ch == "mkdir?")
-                cout << "创建新目录dirname ，格式为 mkdir [dirname]" << endl;
+                cout << "\t\t创建新目录dirname ，格式为 mkdir [dirname]" << endl;
             else if (ch == "mk?")
-                cout << "创建新文件filename，格式为 mk[filename]" << endl;
+                cout << "\t\t创建新文件filename，格式为 mk[filename]" << endl;
             else if (ch == "rmdir?")
-                cout << "删除子目录dirname，格式为 rmdir [dirname]" << endl;
+                cout << "\t\t删除子目录dirname，格式为 rmdir [dirname]" << endl;
             else if (ch == "rm?")
-                cout << "删除文件filename，输入格式为 rm [filename]" << endl;
+                cout << "\t\t删除文件filename，输入格式为 rm [filename]" << endl;
             else if (ch == "renamedir?")
-                cout << "目录重命名 " << endl;
+                cout << "\t\t目录重命名 " << endl;
             else if (ch == "rename?")
-                cout << "文件重命名 " << endl;
+                cout << "\t\t文件重命名 " << endl;
             else if (ch == "cd?")
-                cout << "打开子目录dirname，格式为 cd [dirname]" << endl;
+                cout << "\t\t打开子目录dirname，格式为 cd [dirname]" << endl;
             else if (ch == "read?")
-                cout << "查看文件filename内容，格式为 read [filename]" << endl;
+                cout << "\t\t查看文件filename内容，格式为 read [filename]" << endl;
 			else if (ch == "cut?")
-                cout << "剪切文件filename，格式为 cut [filename]" << endl;
+                cout << "\t\t剪切文件filename，格式为 cut [filename]" << endl;
             else if (ch == "ls?")
-                cout << "显示目录内容列表" << endl;
+                cout << "\t\t显示目录内容列表" << endl;
             else if (ch == "cpdir?")
-                cout << "复制子目录dirname, 格式为 cpDir [dirname]" << endl;
+                cout << "\t\t复制子目录dirname, 格式为 cpDir [dirname]" << endl;
             else if (ch == "cp?")
-                cout << "复制文件filename,格式为 cp [filename]" << endl;
+                cout << "\t\t复制文件filename,格式为 cp [filename]" << endl;
             else if (ch == "pastedir?")
-                cout << "粘贴已复制的目录" << endl;
+                cout << "\t\t粘贴已复制的目录" << endl;
 			else if (ch == "cutdir?")
-				cout << "剪切目录dirname，格式为 cutdir [dirname]" << endl;
+				cout << "\t\t剪切目录dirname，格式为 cutdir [dirname]" << endl;
             else if (ch == "paste?")
-                cout << "粘贴已复制的文件" << endl;
+                cout << "\t\t粘贴已复制的文件" << endl;
             else if (ch == "clear?")
-                cout << "清屏" << endl;
+                cout << "\t\t清屏" << endl;
             else if (ch == "vi?")
-                cout << "编辑文档filename，输入格式为 vi[filename]" << endl;
+                cout << "\t\t编辑文档filename，输入格式为 vi[filename]" << endl;
             else if (ch == "cd..?")
-                cout << "返回当前目录的上一级目录" << endl;
+                cout << "\t\t返回当前目录的上一级目录" << endl;
             else if (ch == "exit?")
-                cout << "注销文件系统" << endl;
+                cout << "\t\t注销文件系统" << endl;
 			else if (ch == "1")
 				break;
             else
-                cout << "命令无效！" << endl;
+                cout << "\t\t命令无效！" << endl;
 		}
 
 }
@@ -291,7 +291,7 @@ void run()
                         cin >> pass;
 						if (login(name, pass) == -1)
 						{
-							cout << "          --磁盘打开失败! " << endl;
+							cout << "          --磁盘打开失败，请检查磁盘文件 " << endl;
 							Sleep(1000);
 						}
                         else if (login(name, pass) == 1) 
