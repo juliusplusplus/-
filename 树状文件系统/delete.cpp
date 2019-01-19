@@ -272,7 +272,7 @@ int FileSystem::deleteDir() //删除目录前的逻辑判断
      * 1. 该目录处于父目录的目录链表的位置
      * 2. 该目录下是否有子目录或者子文件
      * */
-if(copytempdir!=NULL)
+if(copytempdir!=NULL)					
 if (!strcmp(p->name, copytempdir->name))
 		copytempdir = NULL;
 	/*增加磁盘大小*/
