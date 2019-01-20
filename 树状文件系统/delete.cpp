@@ -127,7 +127,7 @@ int FileSystem::deleteFile2()    //删除文件前的逻辑判断
 }
 
 
-
+//存在问题
 int FileSystem::dele_dir(MyDir *p)    //删除目录
 {
 	MyDir *d = p->dirPtr;
