@@ -130,8 +130,11 @@ int FileSystem::deleteFile2()    //删除文件前的逻辑判断
 //存在问题
 int FileSystem::dele_dir(MyDir *p)    //删除目录
 {
-	//if(p->dirPtr!=NULL ||p->filePtr!=NULL )
+	//MyDir *d =NULL;
+	//d = p->dirPtr;
 	MyDir *d = p->dirPtr;
+	//MyFile *f = NULL;
+	//f = p->filePtr;
     MyFile *f = p->filePtr;
     if (f != 0) 
 	{

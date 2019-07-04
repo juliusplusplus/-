@@ -78,7 +78,7 @@ int FileSystem::pasteDir()    //粘贴目录
 			break;
 		h = h->preDir;
 	}
-	if (h == NULL) //是否有子目录,若无
+	if (h->dirPtr == NULL) //是否有子目录,若无
 	{
 
 		disk_empty -= copytempdir->size;    //减去大小
@@ -98,7 +98,7 @@ int FileSystem::pasteDir()    //粘贴目录
 	}
 	else
 	{
-		while (h != NULL)
+		while (h->dirPtr != NULL)
 		{
 			if (!strcmp(h->name, copytempdir->name))
 			{

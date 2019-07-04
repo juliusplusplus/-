@@ -10,9 +10,13 @@ int FileSystem::edit()    //编辑文件
         if (!strcmp(f->name, n)) 
 		{
             cin >> s;
-            f->content = s;				//存内容
-            f->size = s.length();		//存大小
-            disk_empty -= f->size;		//存磁盘空间
+            disk_empty -= s.length();		//存磁盘空间
+			if (disk_empty < 0) {
+				cout << "NO ENOUGH SPACE     --FAILED" << endl;
+				return 1;
+			}
+			f->content = s;				//存内容
+			f->size = s.length();		//存大小
             MyDir *d = currentDir;
             while (d != 0)//修改编辑文件后各级目录的大小
             {

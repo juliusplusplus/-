@@ -105,7 +105,7 @@ void help()
 /*用户注册写入文件函数*/
 int regist(char username[30], char password[30]) 
 {
-
+	
     FILE *cfptr;//文件指针
     if ((cfptr = fopen("users.ini", "a+")) == NULL) 
 	{
@@ -197,10 +197,10 @@ int fsOperate(char name[30], char pass[30])
 				//fs.copyDir2();
 			    fs.deleteDir2();
 			}
-           //else if (choice == "clrdir") 
-		//	{
-             // fs.ClrDir();
-            //} 
+			else if (choice == "clrdir")
+			{
+				fs.ClrDir();
+			}
             else if (choice == "paste") 
 			{
                 fs.pasteFile();
