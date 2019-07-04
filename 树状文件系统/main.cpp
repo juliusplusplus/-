@@ -197,10 +197,10 @@ int fsOperate(char name[30], char pass[30])
 				//fs.copyDir2();
 			    fs.deleteDir2();
 			}
-			else if (choice == "clrdir")
-			{
-				fs.ClrDir();
-			}
+           //else if (choice == "clrdir") 
+		//	{
+             // fs.ClrDir();
+            //} 
             else if (choice == "paste") 
 			{
                 fs.pasteFile();
